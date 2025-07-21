@@ -13,6 +13,17 @@ import {
   FaFigma,
   FaAws,
 } from "react-icons/fa";
+import { Shield } from "lucide-react";
+import {
+  MdOutlineScience,
+  MdOutlinePhotoCamera,
+  MdLock,
+  MdImage,
+  MdOutlineStorage,
+} from "react-icons/md";
+import { FaShieldAlt, FaTools } from "react-icons/fa";
+import { AiOutlineBarChart } from "react-icons/ai";
+import { GiBrain } from "react-icons/gi";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -125,6 +136,53 @@ const SkillsSection = () => {
         },
       ],
     },
+    {
+  icon: Shield,
+  title: "Digital Forensics",
+  color: "text-red-400",
+  skills: [
+    {
+      name: "Autopsy",
+      icon: <MdOutlineScience className="w-4 h-4 text-[#F87171]" />,
+    },
+    {
+      name: "Sleuth Kit",
+      icon: <MdOutlineScience className="w-4 h-4 text-[#F87171]" />,
+    },
+    {
+      name: "FTK Imager",
+      icon: <MdOutlinePhotoCamera className="w-4 h-4 text-[#F59E0B]" />,
+    },
+    {
+      name: "John the Ripper",
+      icon: <MdLock className="w-4 h-4 text-[#10B981]" />,
+    },
+    {
+      name: "SNORT",
+      icon: <FaShieldAlt className="w-4 h-4 text-[#3B82F6]" />,
+    },
+    {
+      name: "Splunk",
+      icon: <AiOutlineBarChart className="w-4 h-4 text-[#9333EA]" />,
+    },
+    {
+      name: "CyberChef",
+      icon: <FaTools className="w-4 h-4 text-[#EC4899]" />,
+    },
+    {
+      name: "Volatility",
+      icon: <GiBrain className="w-4 h-4 text-[#8B5CF6]" />,
+    },
+    {
+      name: "ExifTool",
+      icon: <MdImage className="w-4 h-4 text-[#FBBF24]" />,
+    },
+    {
+      name: "HxD",
+      icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" />,
+    },
+  ],
+},
     {
       icon: Layout,
       title: "UI/UX Design",
