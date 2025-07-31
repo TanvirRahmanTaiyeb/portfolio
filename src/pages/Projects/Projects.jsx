@@ -3,46 +3,41 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
+// Image imports for projects
+import ptguiDemo from "../../assets/images/project/ptgui-demo-output.png";
+import devdeakinDemo from "../../assets/images/project/devdeakin-demo.png";
+import pingDemo from "../../assets/images/project/ping-demo.png"; // <-- Make sure to save your screenshot here!
+
 const projects = [
   {
-    title: "Olova! A Lightweight JavaScript Library",
+    title: "PT-GUI: AI-Powered Penetration Testing Toolkit",
     description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
-    color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
+      "PT-GUI is a student-led, open-source GUI toolkit for penetration testing and cybersecurity education at Deakin University. As 2025 project lead, I designed and implemented the AI Scenario Training module (GPT-4 powered custom scenario generator) and PentestGPT (output-aware next-step adviser). These features enable users to simulate realistic attack chains or get AI-powered guidance after tool scans, making PT-GUI a uniquely effective platform for hands-on learning and advanced workflow automation.",
+    src: ptguiDemo,
+    link: "https://github.com/Hardhat-Enterprises/Deakin-Detonator-Toolkit",
+    color: "#0080ff",
+    githubLink: "https://github.com/Hardhat-Enterprises/Deakin-Detonator-Toolkit",
+    liveLink: "https://youtu.be/k5-7Kz4Y220?si=0ZWtptBdQcB2jpLn",
   },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "DevDeakin Q&A Platform (Full-stack, Premium Features)",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
-    src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
-    color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
-    liveLink: "https://codervai.vercel.app",
+      "A full-stack Q&A platform built with React, Firebase, and Stripe. Users can post questions with Markdown/code, upload images, search, and upgrade to premium via Stripe payments. Newsletter and transactional emails are powered by SendGrid. I designed and implemented all features including authentication, payments, premium content, and newsletter automation. The project demonstrates modern full-stack development and scalable cloud integration.",
+    src: devdeakinDemo,
+    link: "https://github.com/TanvirRahmanTaiyeb/devdeakin-qa-platform",
+    color: "#FBBF24",
+    githubLink: "https://github.com/TanvirRahmanTaiyeb/devdeakin-qa-platform",
+    liveLink: "https://youtu.be/AcIcTJSyZPg?si=9gyUKYQTHVaNd2Sl",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: "Python Ping Application (Raw Socket ICMP Tool)",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
-    color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
-    liveLink: "https://codewhisperer.vercel.app/",
-  },
-  {
-    title: "CodeKori 🔥",
-    description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
-    color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+      "A Python-based ICMP Ping utility developed using raw sockets. This educational tool replicates the core behavior of the native ping command by manually crafting ICMP Echo Request/Reply packets, with RTT/TTL reporting and checksum validation. Built for cybersecurity and networking learners to deeply understand protocol-level diagnostics and packet inspection. Cross-platform, real-time, and perfect for hands-on protocol exploration.",
+    src: pingDemo,
+    link: "https://github.com/TanvirRahmanTaiyeb/ping-application-python",
+    color: "#4ADE80",
+    githubLink: "https://github.com/TanvirRahmanTaiyeb/ping-application-python",
+    liveLink: "https://youtu.be/03eXKgsISiM?si=TDNfcJIiT2kKRirR",
   },
 ];
 
@@ -107,7 +102,7 @@ export default function Projects() {
               <Card
                 key={`p_${i}`}
                 i={i}
-                url={project.link}
+                url={project.src}
                 title={project.title}
                 color={project.color}
                 description={project.description}
@@ -239,37 +234,59 @@ function Card({
                   </span>
                 </motion.a>
 
-                {/* Live Link */}
-                <motion.a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                {/* Live Link: Show YouTube icon and Video Demo if liveLink is YouTube, else globe */}
+                {liveLink && liveLink.includes("youtube") ? (
+                  <motion.a
+                    href={liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2"
+                    whileHover={{ y: -3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
+                    {/* YouTube icon */}
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="text-red-500">
+                      <path d="M23.498 6.186a2.994 2.994 0 00-2.108-2.116C19.364 3.5 12 3.5 12 3.5s-7.364 0-9.39.57A2.994 2.994 0 00.502 6.186C0 8.211 0 12 0 12s0 3.789.502 5.814a2.994 2.994 0 002.108 2.116C4.636 20.5 12 20.5 12 20.5s7.364 0 9.39-.57a2.994 2.994 0 002.108-2.116C24 15.789 24 12 24 12s0-3.789-.502-5.814zM9.545 15.568V8.432l6.545 3.568-6.545 3.568z"/>
+                    </svg>
+                    <span
+                      className="text-xs md:text-sm font-medium"
+                      style={{ color }}
+                    >
+                      Video Demo
+                    </span>
+                  </motion.a>
+                ) : (
+                  <motion.a
+                    href={liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2"
+                    whileHover={{ y: -3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
                   >
-                    Live
-                  </span>
-                </motion.a>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke={color}
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span
+                      className="text-xs md:text-sm font-medium"
+                      style={{ color }}
+                    >
+                      Live
+                    </span>
+                  </motion.a>
+                )}
               </div>
             </div>
           </div>

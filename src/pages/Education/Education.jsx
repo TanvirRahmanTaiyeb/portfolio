@@ -1,39 +1,79 @@
 import React, { useState } from "react";
-import EducationLoader from "@/components/ui/EducationLoader";
-import {
-  Star,
-  Award,
-  Calendar,
-  BookOpen,
-  GraduationCap,
-  Trophy,
-} from "lucide-react";
+import { Award, Calendar, BookOpen, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
+
+// Suggested taglines—edit, add, or randomize as you wish
+const taglines = [
+  "Where curiosity meets opportunity, learning becomes transformation.",
+  "Academic milestones, real-world impact.",
+  "Pushing boundaries through knowledge and innovation.",
+  "A journey of curiosity, commitment, and growth.",
+  "Building a smarter future, one lesson at a time.",
+];
 
 const EducationSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  // Random tagline each time
+  const tagline = taglines[Math.floor(Math.random() * taglines.length)];
+
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
-      mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      degree: "Bachelor of Information Technology",
+      school: "Deakin University · Australia",
+      mascot: "🎓",
+      year: "Mar 2023 - Jul 2025",
+      achievements: [
+        "WAM: 82.5% (High Distinction)",
+        "Major: Cyber Security"
+      ],
+      skills: [
+        "Cybersecurity",
+        "AI Applications",
+        "Networking",
+        "Secure System Design"
+      ],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Developed strong technical expertise in cyber security, AI integration, and network architecture, while delivering real-world projects focusing on penetration testing and secure design."
+    },
+    {
+      degree: "Bachelor of Computer Science",
+      school: "RMIT University (Royal Melbourne Institute of Technology) · Australia",
+      mascot: "🎓",
+      year: "Jun 2022 - Feb 2023",
+      achievements: [
+        "WAM: Distinction Average",
+        "Core: Programming & Algorithms"
+      ],
+      skills: [
+        "Software Engineering",
+        "Database Systems",
+        "Object-Oriented Programming",
+        "Problem Solving"
+      ],
+      description:
+        "Strengthened foundations in computer science concepts, programming languages, and software development before transitioning to cybersecurity specialization."
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
+      school: "Dhaka College · Bangladesh",
       mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      year: "2019 - 2022",
+      achievements: ["GPA: 5.00 (A+ in all subjects)", "Science Stream"],
+      skills: ["Physics", "Chemistry", "Biology", "Higher Mathematics", "ICT", "English"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Achieved top grades in all science subjects, gaining advanced knowledge in core STEM disciplines and strengthening problem-solving and analytical thinking."
     },
+    {
+      degree: "Secondary School Certificate (SSC)",
+      school: "Ideal School and College · Bangladesh",
+      mascot: "📘",
+      year: "2017 - 2019",
+      achievements: ["GPA: 5.00", "Science Stream"],
+      skills: ["Mathematics", "Physics", "Chemistry", "Biology", "ICT"],
+      description:
+        "Established a strong foundation in science and technology, excelling across all core subjects and preparing for higher academic challenges."
+    }
   ];
 
   const containerVariants = {
@@ -41,9 +81,9 @@ const EducationSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-      },
-    },
+        staggerChildren: 0.2
+      }
+    }
   };
 
   const cardVariants = {
@@ -53,9 +93,9 @@ const EducationSection = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
-      },
-    },
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
@@ -68,21 +108,29 @@ const EducationSection = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
+        {/* Section Heading (with animated underline & tagline) */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-cyan-300 via-blue-400 to-blue-600 bg-clip-text text-transparent mb-4 drop-shadow-xl tracking-tight">
             Educational Journey
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
-          </p>
+          {/* --- MATCHES THE CERTIFICATIONS UNDERLINE EXACTLY --- */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
+            className="mx-auto h-1 w-36 bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 rounded-full mb-5 origin-left"
+          />
+          <span className="text-lg md:text-xl text-cyan-200/90 font-medium tracking-wide block italic drop-shadow-sm select-none">
+            {tagline}
+          </span>
         </motion.div>
 
+        {/* Education Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -102,12 +150,11 @@ const EducationSection = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="space-y-6">
+                {/* Degree and School */}
                 <div className="space-y-2">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{edu.mascot}</span>
-                    <h3 className="text-2xl font-bold text-white">
-                      {edu.degree}
-                    </h3>
+                    <h3 className="text-2xl font-bold text-white">{edu.degree}</h3>
                   </div>
                   <p className="text-lg text-gray-300 flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-teal-500" />
@@ -119,10 +166,12 @@ const EducationSection = () => {
                   </p>
                 </div>
 
+                {/* Description */}
                 <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
                   {edu.description}
                 </p>
 
+                {/* Achievements */}
                 <div className="space-y-3">
                   <h4 className="text-sm font-semibold text-white flex items-center gap-2">
                     <Trophy className="w-4 h-4 text-yellow-500" />
@@ -141,6 +190,7 @@ const EducationSection = () => {
                   </div>
                 </div>
 
+                {/* Skills */}
                 <div className="flex flex-wrap gap-2">
                   {edu.skills.map((skill, i) => (
                     <span

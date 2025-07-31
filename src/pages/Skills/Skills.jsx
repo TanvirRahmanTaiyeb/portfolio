@@ -77,198 +77,136 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
 
 const SkillsSection = () => {
   const skillCategories = [
-    {
-      icon: Code2,
-      title: "Frontend Development",
-      color: "text-blue-400",
-      skills: [
-        { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
-        {
-          name: "Next.js",
-          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
-        },
-        {
-          name: "TypeScript",
-          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
-        },
-        {
-          name: "Tailwind CSS",
-          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "HTML5",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
-        },
-        {
-          name: "CSS3",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
-        },
-      ],
-    },
-    {
-      icon: Database,
-      title: "Backend Development",
-      color: "text-green-400",
-      skills: [
-        {
-          name: "Node.js",
-          icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
-        },
-        {
-          name: "Python",
-          icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
-        },
-        {
-          name: "PostgreSQL",
-          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
-        },
-        {
-          name: "REST APIs",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
-        },
-        {
-          name: "GraphQL",
-          icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
-        },
-      ],
-    },
-    {
-  icon: Shield,
-  title: "Digital Forensics",
-  color: "text-red-400",
-  skills: [
-    {
-      name: "Autopsy",
-      icon: <MdOutlineScience className="w-4 h-4 text-[#F87171]" />,
-    },
-    {
-      name: "Sleuth Kit",
-      icon: <MdOutlineScience className="w-4 h-4 text-[#F87171]" />,
-    },
-    {
-      name: "FTK Imager",
-      icon: <MdOutlinePhotoCamera className="w-4 h-4 text-[#F59E0B]" />,
-    },
-    {
-      name: "John the Ripper",
-      icon: <MdLock className="w-4 h-4 text-[#10B981]" />,
-    },
-    {
-      name: "SNORT",
-      icon: <FaShieldAlt className="w-4 h-4 text-[#3B82F6]" />,
-    },
-    {
-      name: "Splunk",
-      icon: <AiOutlineBarChart className="w-4 h-4 text-[#9333EA]" />,
-    },
-    {
-      name: "CyberChef",
-      icon: <FaTools className="w-4 h-4 text-[#EC4899]" />,
-    },
-    {
-      name: "Volatility",
-      icon: <GiBrain className="w-4 h-4 text-[#8B5CF6]" />,
-    },
-    {
-      name: "ExifTool",
-      icon: <MdImage className="w-4 h-4 text-[#FBBF24]" />,
-    },
-    {
-      name: "HxD",
-      icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" />,
-    },
-  ],
-},
-    {
-      icon: Layout,
-      title: "UI/UX Design",
-      color: "text-purple-400",
-      skills: [
-        { name: "Figma", icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
-        {
-          name: "Responsive Design",
-          icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "Wireframing",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" />,
-        },
-        {
-          name: "Prototyping",
-          icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
-        },
-      ],
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      color: "text-orange-400",
-      skills: [
-        { name: "AWS", icon: <FaAws className="w-4 h-4 text-[#FF9900]" /> },
-        {
-          name: "Docker",
-          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
-        },
-        { name: "CI/CD", icon: <FcWorkflow className="w-4 h-4" /> },
-        {
-          name: "Kubernetes",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#326CE5]" />,
-        },
-        { name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
-        { name: "Linux", icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
-      ],
-    },
-    {
-      icon: Cpu,
-      title: "Tools & Technologies",
-      color: "text-pink-400",
-      skills: [
-        {
-          name: "VS Code",
-          icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" />,
-        },
-        { name: "Jest", icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
-        {
-          name: "Webpack",
-          icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
-        },
-        { name: "Redux", icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
-        {
-          name: "Firebase",
-          icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
-        },
-        { name: "Vercel", icon: <SiVercel className="w-4 h-4 text-white" /> },
-        { name: "Vite", icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: "Creative Skills",
-      color: "text-yellow-400",
-      skills: [
-        {
-          name: "UI Animation",
-          icon: <MdAnimation className="w-4 h-4 text-[#FF4081]" />,
-        },
-        {
-          name: "SVG Animation",
-          icon: <MdAnimation className="w-4 h-4 text-[#00C853]" />,
-        },
-        {
-          name: "3D Modeling",
-          icon: <Cpu className="w-4 h-4 text-[#7C4DFF]" />,
-        },
-        {
-          name: "Motion Graphics",
-          icon: <MdAnimation className="w-4 h-4 text-[#FF6D00]" />,
-        },
-      ],
-    },
-  ];
+  {
+    icon: Code2,
+    title: "Programming & Scripting",
+    color: "text-blue-400",
+    skills: [
+      { name: "Python", icon: <FaPython className="w-4 h-4 text-[#3776AB]" /> },
+      { name: "Java", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" /> },
+      { name: "JavaScript", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" /> },
+      { name: "TypeScript", icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" /> },
+      { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
+      { name: "Vue.js (Vue3)", icon: <SiVite className="w-4 h-4 text-[#42B883]" /> },
+      { name: "Next.js", icon: <SiNextdotjs className="w-4 h-4 text-white" /> },
+      { name: "Node.js", icon: <FaNodeJs className="w-4 h-4 text-[#339933]" /> },
+      { name: "HTML5", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" /> },
+      { name: "CSS3", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" /> },
+      { name: "SQL", icon: <SiPostgresql className="w-4 h-4 text-[#336791]" /> },
+      { name: "Bash", icon: <TbBrandVscode className="w-4 h-4 text-[#4EAA25]" /> },
+      { name: "PowerShell", icon: <TbBrandVscode className="w-4 h-4 text-[#5391FE]" /> },
+    ],
+  },
+  {
+    icon: Cpu,
+    title: "AI & Machine Learning",
+    color: "text-purple-400",
+    skills: [
+      { name: "GPT-4 API", icon: <SiGraphql className="w-4 h-4 text-[#A259FF]" /> },
+      { name: "Google Gemini", icon: <SiGraphql className="w-4 h-4 text-[#34A853]" /> },
+      { name: "Prompt Engineering", icon: <GiBrain className="w-4 h-4 text-[#8B5CF6]" /> },
+      { name: "Scikit-learn", icon: <SiGraphql className="w-4 h-4 text-[#F7931E]" /> },
+      { name: "Pandas", icon: <SiGraphql className="w-4 h-4 text-[#130754]" /> },
+      { name: "NumPy", icon: <SiGraphql className="w-4 h-4 text-[#013243]" /> },
+      { name: "TensorFlow", icon: <SiGraphql className="w-4 h-4 text-[#FF6F00]" /> },
+      { name: "AI Concepts", icon: <SiGraphql className="w-4 h-4 text-[#7E57C2]" /> },
+    ],
+  },
+  {
+    icon: Shield,
+    title: "Cybersecurity & Vulnerability Testing",
+    color: "text-red-400",
+    skills: [
+      { name: "Kali Linux", icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
+      { name: "Ubuntu", icon: <FaLinux className="w-4 h-4 text-[#E95420]" /> },
+      { name: "VirtualBox", icon: <MdOutlineScience className="w-4 h-4 text-[#6C63FF]" /> },
+      { name: "Metasploit", icon: <FaTools className="w-4 h-4 text-[#E91E63]" /> },
+      { name: "Nessus", icon: <MdLock className="w-4 h-4 text-[#0EA5E9]" /> },
+      { name: "Burp Suite", icon: <MdLock className="w-4 h-4 text-[#F97316]" /> },
+      { name: "Nmap", icon: <MdLock className="w-4 h-4 text-[#2563EB]" /> },
+      { name: "Hping3", icon: <MdLock className="w-4 h-4 text-[#10B981]" /> },
+      { name: "Traceroute", icon: <MdLock className="w-4 h-4 text-[#3B82F6]" /> },
+      { name: "PhoneSploit", icon: <MdLock className="w-4 h-4 text-[#9C27B0]" /> },
+      { name: "DoS/DDoS Simulation", icon: <MdLock className="w-4 h-4 text-[#DC2626]" /> },
+      { name: "Social Engineering", icon: <MdLock className="w-4 h-4 text-[#F59E0B]" /> },
+    ],
+  },
+  {
+    icon: Database,
+    title: "Network Analysis & Traffic Monitoring",
+    color: "text-green-400",
+    skills: [
+      { name: "Wireshark", icon: <MdOutlineScience className="w-4 h-4 text-[#1F8ACB]" /> },
+      { name: "Cisco Packet Tracer", icon: <MdOutlineScience className="w-4 h-4 text-[#00A1E4]" /> },
+      { name: "DNS Configuration", icon: <MdOutlineScience className="w-4 h-4 text-[#9333EA]" /> },
+      { name: "Ping Tools", icon: <MdOutlineScience className="w-4 h-4 text-[#F59E0B]" /> },
+    ],
+  },
+  {
+    icon: Cpu,
+    title: "Digital Forensics & Evidence Handling",
+    color: "text-pink-400",
+    skills: [
+      { name: "Autopsy", icon: <MdOutlineScience className="w-4 h-4 text-[#F87171]" /> },
+      { name: "FTK Imager", icon: <MdOutlinePhotoCamera className="w-4 h-4 text-[#F59E0B]" /> },
+      { name: "Sleuth Kit", icon: <MdOutlineScience className="w-4 h-4 text-[#F87171]" /> },
+      { name: "Volatility", icon: <GiBrain className="w-4 h-4 text-[#8B5CF6]" /> },
+      { name: "ExifTool", icon: <MdImage className="w-4 h-4 text-[#FBBF24]" /> },
+      { name: "CyberChef", icon: <FaTools className="w-4 h-4 text-[#EC4899]" /> },
+      { name: "John the Ripper", icon: <MdLock className="w-4 h-4 text-[#10B981]" /> },
+      { name: "Zsteg", icon: <MdLock className="w-4 h-4 text-[#F59E0B]" /> },
+      { name: "Steghide", icon: <MdLock className="w-4 h-4 text-[#6B7280]" /> },
+      { name: "HxD", icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" /> },
+      { name: "HashCalc", icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" /> },
+      { name: "Ophcrack", icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" /> },
+      { name: "Rainbow Tables", icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" /> },
+      { name: "CrypTool", icon: <MdOutlineStorage className="w-4 h-4 text-[#6B7280]" /> },
+    ],
+  },
+  {
+    icon: Cloud,
+    title: "Automation & DevOps",
+    color: "text-orange-400",
+    skills: [
+      { name: "Jenkins (CI/CD)", icon: <FcWorkflow className="w-4 h-4" /> },
+      { name: "Docker", icon: <FaDocker className="w-4 h-4 text-[#2496ED]" /> },
+      { name: "GitHub Actions", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
+      { name: "Firebase SDK", icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" /> },
+      { name: "AWS", icon: <FaAws className="w-4 h-4 text-[#FF9900]" /> },
+      { name: "Google Cloud", icon: <FaAws className="w-4 h-4 text-[#34A853]" /> },
+      { name: "Microsoft Azure", icon: <FaAws className="w-4 h-4 text-[#2563EB]" /> },
+    ],
+  },
+  {
+    icon: Layout,
+    title: "UI/UX & Design Tools",
+    color: "text-indigo-400",
+    skills: [
+      { name: "Figma", icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
+      { name: "InVision", icon: <Layout className="w-4 h-4 text-[#E91E63]" /> },
+      { name: "Miro", icon: <Layout className="w-4 h-4 text-[#FFCC00]" /> },
+      { name: "Lucidchart", icon: <Layout className="w-4 h-4 text-[#2563EB]" /> },
+      { name: "Microsoft Visio", icon: <Layout className="w-4 h-4 text-[#0078D4]" /> },
+      { name: "Responsive Design", icon: <Layout className="w-4 h-4 text-[#38B2AC]" /> },
+      { name: "Wireframing", icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" /> },
+      { name: "Prototyping", icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" /> },
+    ],
+  },
+  {
+    icon: Paintbrush,
+    title: "Collaboration & Project Management",
+    color: "text-yellow-400",
+    skills: [
+      { name: "Jira", icon: <Layout className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Trello", icon: <Layout className="w-4 h-4 text-[#0079BF]" /> },
+      { name: "Atlassian Suite", icon: <Layout className="w-4 h-4 text-[#2684FF]" /> },
+      { name: "Microsoft Teams Planner", icon: <Layout className="w-4 h-4 text-[#6264A7]" /> },
+      { name: "SharePoint", icon: <Layout className="w-4 h-4 text-[#0078D4]" /> },
+      { name: "Google Workspace", icon: <Layout className="w-4 h-4 text-[#EA4335]" /> },
+      { name: "MS Office Suite", icon: <Layout className="w-4 h-4 text-[#0078D4]" /> },
+    ],
+  },
+];
 
   return (
     <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#04081A] relative">
