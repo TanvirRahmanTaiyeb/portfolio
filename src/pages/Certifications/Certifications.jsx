@@ -171,7 +171,9 @@ const Certifications = () => {
                   alt={cert.org}
                   className={`mx-auto object-contain drop-shadow-xl transition-transform duration-300
                     ${
-                      cert.org === "Microsoft"
+                      cert.name?.props?.children?.includes("(AZ-900)")
+                        ? "w-32 h-32 md:w-40 md:h-40"
+                        : cert.org === "Microsoft"
                         ? "w-40 h-40 md:w-52 md:h-52 scale-110"
                         : "w-36 h-36 md:w-44 md:h-44"
                     }
