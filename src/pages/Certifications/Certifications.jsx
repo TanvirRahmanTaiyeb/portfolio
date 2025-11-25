@@ -5,6 +5,7 @@ import securityPlus from "../../assets/images/certifications/security-plus.png";
 import googleCyber from "../../assets/images/certifications/google-cybersecurity.png";
 import chfi from "../../assets/images/certifications/chfi.png";
 import sc900 from "../../assets/images/certifications/sc900.png";
+import az900 from "../../assets/images/certifications/az900.png";
 
 const certs = [
   {
@@ -33,6 +34,19 @@ const certs = [
       </>
     ),
     link: "/certifications/chfi-v11.pdf",
+  },
+    {
+    image: az900,
+    org: "Microsoft",
+    date: "Nov 2025",
+    name: (
+      <>
+        Azure Fundamentals
+        <br />
+        <span className="text-cyan-200 font-bold">(AZ-900)</span>
+      </>
+    ),
+    link: "https://learn.microsoft.com/api/credentials/share/en-us/TANVIRRAHMANTAIYEB-8194/4E9628B3A2B567BC?sharingId=BA2A723A03A87E1C",
   },
   {
     image: sc900,
