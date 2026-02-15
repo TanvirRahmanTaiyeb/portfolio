@@ -127,10 +127,10 @@ const ExperienceSection = () => {
     },
     {
       icon: Activity,
-      title: "Casual IT Support – Exam Support Team",
+      title: "Casual IT Support Officer – Exam Support Team",
       company: "Deakin University",
       location: "Geelong, Australia",
-      period: "May 2025 – Jun 2025",
+      period: "May 2025 – Feb 2025",
       description:
         "Provided real-time technical support for high-pressure university exam sessions, resolving system and network issues and ensuring seamless student experience.",
       details: [
@@ -145,7 +145,7 @@ const ExperienceSection = () => {
       title: "Writing Mentor (Students Helping Students Program)",
       company: "Deakin University",
       location: "Geelong, Australia",
-      period: "Mar 2023 – Current 2025",
+      period: "Mar 2023 – July 2025",
       description:
         "Provided individualized academic writing support and mentoring to university students, helping them build confidence and succeed in their assignments.",
       details: [
