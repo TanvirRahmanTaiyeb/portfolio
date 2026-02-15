@@ -130,7 +130,7 @@ const ExperienceSection = () => {
       title: "Casual IT Support Officer – Exam Support Team",
       company: "Deakin University",
       location: "Geelong, Australia",
-      period: "May 2025 – Feb 2025",
+      period: "May 2025 – Feb 2026",
       description:
         "Provided real-time technical support for high-pressure university exam sessions, resolving system and network issues and ensuring seamless student experience.",
       details: [
